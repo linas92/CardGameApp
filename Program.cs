@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +10,8 @@ namespace CardGameApp
         static void Main(string[] args)
         {
 
-
+            PokerDeck deck = new PokerDeck();
+            
 
 
 
