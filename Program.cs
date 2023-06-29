@@ -12,7 +12,12 @@ namespace CardGameApp
 
             PokerDeck deck = new PokerDeck();
             
-            
+            var hand = deck.DealCards();
+
+            foreach (var card in hand)
+            {
+                Console.WriteLine($"{card.Suit} {card.Value}");
+            }
 
 
 

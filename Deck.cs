@@ -27,7 +27,7 @@ namespace CardGameApp
                 for (int val = 0; val < 13; val++)
                 {
                     // will have the cards come in like in the factory :)
-                    fullDeck.Add(new PlayingCardModel { Suit = (int)(CardSuit)suit, Value = (int)(CardValue)val });
+                    fullDeck.Add(new PlayingCardModel { Suit = (CardSuit)suit, Value = (CardValue)val });
                 }
             }
         }
