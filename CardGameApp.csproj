@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlackjackDeck.cs" />
-    <Compile Include="CardSuit.cs" />
-    <Compile Include="CardValue.cs" />
+    <Compile Include="Enums\CardSuit.cs" />
+    <Compile Include="Enums\CardValue.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="PlayingCard.cs" />
+    <Compile Include="Models\PlayingCardModel.cs" />
     <Compile Include="PokerDeck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

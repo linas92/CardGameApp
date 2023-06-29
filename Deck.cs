@@ -8,13 +8,13 @@ namespace CardGameApp
     public abstract class Deck
     {
 // this will be the full deck (when I create the deck I'm going to populate the full deck and pull everything to the full deck) protected allows me to access this in my overloaded classes
-        protected List <PlayingCard> fullDeck = new List <PlayingCard> ();
+        protected List <PlayingCardModel> fullDeck = new List <PlayingCardModel> ();
 
         // this will be a list of playing cards which are available and I'll "pull" out of it whenever I deal cards (or request a card)
-        protected List <PlayingCard> drawPile = new List <PlayingCard> ();
+        protected List <PlayingCardModel> drawPile = new List <PlayingCardModel> ();
 
         // the cards will be "moved around" in different spots
-        protected List <PlayingCard> discardPile = new List <PlayingCard> ();
+        protected List <PlayingCardModel> discardPile = new List <PlayingCardModel> ();
 
         // this will "populate" a full deck with 52 cards (13 from each suit)
         protected void CreateDeck()
@@ -27,7 +27,7 @@ namespace CardGameApp
                 for (int val = 0; val < 13; val++)
                 {
                     // will have the cards come in like in the factory :)
-                    fullDeck.Add(new PlayingCard { Suit = (int)(CardSuit)suit, Value = (int)(CardValue)val });
+                    fullDeck.Add(new PlayingCardModel { Suit = (int)(CardSuit)suit, Value = (int)(CardValue)val });
                 }
             }
         }
@@ -44,22 +44,22 @@ namespace CardGameApp
         }
         
 // I need this abstract as I don't know how different games will be dealt
-        public abstract List<PlayingCard> DealCards();
+        public abstract List<PlayingCardModel> DealCards();
 
 // in "most" games I need to "request" another card. For poker I'll need to override this
-        protected virtual PlayingCard DrawOneCard()
+        protected virtual PlayingCardModel DrawOneCard()
         {
 
 // take does not "remove" and therefore we need to remove our output item.
-            PlayingCard output = drawPile.Take(1).First();
+            PlayingCardModel output = drawPile.Take(1).First();
             
             drawPile.Remove(output);
 
             return output;
         }
-        public List<PlayingCard> RequestCards(List<PlayingCard> cardsToDiscard)
+        public List<PlayingCardModel> RequestCards(List<PlayingCardModel> cardsToDiscard)
         {
-            List<PlayingCard> output = new List<PlayingCard>();
+            List<PlayingCardModel> output = new List<PlayingCardModel>();
 // if you pass two cards in, you put on on a discard pile and get two cards back
             foreach (var card in cardsToDiscard)
             {
