@@ -21,6 +21,11 @@ namespace CardGameApp
             }
             return output;
         }
+// blackjack draws only 1 card at a time
+        public PlayingCardModel RequestCard()
+        {
+            return DrawOneCard();
+        }
     }
 }
 
