@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace CardGameApp
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
 
             PokerDeck deck = new PokerDeck();
+            
             
 
 

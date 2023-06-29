@@ -17,7 +17,7 @@ namespace CardGameApp
 // I request a card 5 times and the end I return the players "hand"
             for (int i = 0; i < 5; i++)
             {
-                output.Add(RequestCard());
+                output.Add(DrawOneCard());
             }
             return output;
         }

@@ -47,7 +47,7 @@ namespace CardGameApp
         public abstract List<PlayingCard> DealCards();
 
 // in "most" games I need to "request" another card. For poker I'll need to override this
-        public virtual PlayingCard RequestCard()
+        protected virtual PlayingCard DrawOneCard()
         {
 
 // take does not "remove" and therefore we need to remove our output item.
@@ -55,6 +55,17 @@ namespace CardGameApp
             
             drawPile.Remove(output);
 
+            return output;
+        }
+        public List<PlayingCard> RequestCards(List<PlayingCard> cardsToDiscard)
+        {
+            List<PlayingCard> output = new List<PlayingCard>();
+// if you pass two cards in, you put on on a discard pile and get two cards back
+            foreach (var card in cardsToDiscard)
+            {
+                output.Add(DrawOneCard());
+                discardPile.Add(card);
+            }
             return output;
         }
     }
