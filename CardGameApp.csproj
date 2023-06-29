@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlackjackDeck.cs" />
     <Compile Include="CardSuit.cs" />
     <Compile Include="CardValue.cs" />
     <Compile Include="Deck.cs" />
